@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzzquizz</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="cabecalho flex aling just-c">
+        <h1><strong>BuzzQuizz</strong></h1>
+    </header>
+
+    <main>
+        
+        <div class="botao-teste" onclick="goToQuizz('14416')">
+            <br>Quizz de exemplo (ver e adaptar função onclick)
+        </div>
+
+    </main>
+
+
+    <div class="quizz invisivel">
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="./interacoes/funcionalidadeQuizz.js"></script>
+    <script src="./interacoes/funcoes.js"></script>
+    <script src="./interacoes/estruturaPrincipal.js"></script>
+</body>
+</html>
