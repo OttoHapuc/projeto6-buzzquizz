@@ -47,24 +47,16 @@ body{
     line-height: 27px;
     
 }
-.inserir1{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    align-items: center;
-    height: 256px;
-    margin-top: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-}
+.inserir1, 
 .inserir2{
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: 825px;
+    max-width: 600px;
+    align-items: space-between;
     margin-top: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    padding: 21px 16px 6px 16px;
 }
 
 .indicacao {
@@ -75,14 +67,14 @@ body{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 23px;
 }
 
 .texto2 {
     width: 564px;
     height: 46px;
-    margin-top: 15px;
+    margin-bottom: 15px;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
     display: flex;
@@ -99,4 +91,15 @@ body{
     height: 54px;
     background: #EC362D;
     border: 1px solid #EC362D;
+}
+
+@media (max-width: 600px) {
+    .texto2{
+        transition: .5s;
+        width: 341px;
+    }
+    .botao1{
+        transition: .5s;
+        width: 324px;
+    }
 }
