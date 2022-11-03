@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzzquizz</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="cabecalho1"><p>BuzzQuizz</p></div>
+    <div class="conteudo1 invisivel ">
+        <div class="texto">comece pelo começo</div>
+        <form class="inserir1" onsubmit="botao1">
+            <input name="input1" type="text" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required></input> 
+            <input name="input2" type="url" pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$"  class="texto2 urlQuizz" id="urlQuizz" placeholder="URL da imagem do seu quizz" required></input> 
+            <input name="input3" type="number" min="3" value="3" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required></input> 
+            <input name="input4" type="number" min="2" value="2" class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required></input> 
+        </form>
+        <button onclick="botao1()" class="botao1">Prosseguir para criar perguntas</button>
+    </div>
+    <script src="./interacoes/funcoes.js"></script>
+</body>
