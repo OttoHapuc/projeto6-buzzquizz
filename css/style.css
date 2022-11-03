@@ -107,14 +107,19 @@ strong {
 }
 .AreaDeExibicaoInicial-Tela1 h1 {
     font-weight: 700;
-
+    margin-bottom: 12px;
 }
 .quizzEscolhido {
     width: 340px;
     height: 181px;
     border-radius: 5px;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
     margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.quizzEscolhido img {
+    width: 100%;
 }
 .quizzEscolhido .gradienteTodosOsQuizz{
     width: 100%;
@@ -124,6 +129,10 @@ strong {
     font-size: 19px;
     color: #ffffff;
     align-items: end;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 .quizzEscolhido .gradienteTodosOsQuizz p{
     margin: 0 0 10px 17px;
