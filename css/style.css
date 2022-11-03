@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 *{
     box-sizing: border-box;
     font-size: 20px;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 .flex {
@@ -27,6 +29,10 @@ strong {
     font-weight: bold;
 }
 
+.corpoPrincipal{
+    padding: 0 18px;
+}
+
 /* ======================== cabeçalho ========================*/
 
 .cabecalho {
@@ -34,20 +40,24 @@ strong {
     height: 69px;
     background-color: #ec3620;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
 }
 .cabecalho h1 {
     font-size: 37px;
     color: #ffffff;
 }
 
-/* ======================= corpo ======================= */
+/* ======================= tela 1 ======================= */
 
-main{
-    padding: 146px 194px 0 194px;
+.AreaDeExibicaoInicial-Tela1{
+    padding-top: 146px;
+    width: 1051px;
 }
 
-/* ======================= botão Criar ======================= */
+/* botão Criar ============== */
 
 .botao {
     width: 100%;
@@ -56,6 +66,7 @@ main{
     border: 1px dashed #d5d5d5;
     border-radius: 5px;
     text-align: center;
+    margin-bottom: 77px;
 }
 .botao p {
     font-size: 20px;
@@ -71,6 +82,60 @@ main{
     border: 1px dashed #ec362d;
     border-radius: 50px;
     margin: 15px;
+}
+
+/* ================ jogo ================*/
+
+.AreaDeJogo-Tela2 header{
+    width: 100%;
+    height: 227px;
+    margin-top: 69px;
+    position: relative;
+    font-size: 39px;
+    color: #ffffff;
+}
+.AreaDeJogo-Tela2 header .sombreamento {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.57)    ;
+    position: absolute;
+}
+
+/* todos os quizzes */
+.corpoDeApresentacao{
+    width: 100%;
+}
+.AreaDeExibicaoInicial-Tela1 h1 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.quizzEscolhido {
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.quizzEscolhido img {
+    width: 100%;
+}
+.quizzEscolhido .gradienteTodosOsQuizz{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0)0%, rgba(0,0,0,0.5) 64.58%, #000000 100%);;
+    border-radius: 5px;
+    font-size: 19px;
+    color: #ffffff;
+    align-items: end;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.quizzEscolhido .gradienteTodosOsQuizz p{
+    margin: 0 0 10px 17px;
 }
 
 /* ================ invisivel (deixar pro final) ================*/
