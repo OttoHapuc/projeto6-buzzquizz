@@ -14,41 +14,33 @@
     <div class="cabecalho1"><p>BuzzQuizz</p></div>
 
     <!--tela 1 -->
-    <div class="conteudo1  ">
+    <div class="conteudo1   ">
         <div class="texto">comece pelo começo</div>
-        <form class="inserir1 pergunta0" onsubmit="botao1">
-            <input type="text" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required></input> 
-            <input type="url" pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$"  class="texto2 urlQuizz"  placeholder="URL da imagem do seu quizz" required></input> 
-            <input type="number" min="3" value="3" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required></input> 
-            <input type="number" min="2" value="2" class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required></input> 
+        <form class="inserir1 pergunta0" onsubmit="botao1()">
+            <input type="text" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required>
+            <input type="url" pattern="https://.*"  class="texto2 urlQuizz"  placeholder="URL da imagem do seu quizz" required>
+            <input type="number" min="3" name="quantidadePergunta" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required>
+            <input type="number" min="2"  class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required>
         </form>
         <button onclick="botao1()" class="botao1">Prosseguir para criar perguntas</button>
     </div>
     <!--tela2-->
-    <div class="conteudo2 invisivel ">
+    <div class="conteudo2 invisivel  ">
         <div class="texto">Crie suas perguntas</div>
-        <form class="inserir2 pergunta1" onsubmit="botao2">
-            <p class="indicacao">Pergunta 1</p>
-            <input type="text" class="texto2 tituloQuizz2" placeholder="Texto da pergunta" required></input> 
-            <input type="color" pattern="#" class="texto2 corQuizz" placeholder="Cor de fundo da pergunta" required></input> 
-            <p class="indicacao">Resposta correta</p>
-            <input type="text"  class="texto2 respostaCerta" placeholder="Resposta correta"required></input> 
-            <input type="url"  class="texto2 url0" placeholder="URL da imagem"required></input> 
-            <p class="indicacao">Respostas incorretas</p>
-            <input type="text"  class="texto2 respostaErrada1" placeholder="Resposta incorreta 1"required></input> 
-            <input type="url" pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="texto2 url1" placeholder="URL da imagem 1"required></input> 
-            <input type="text"  class="texto2 respostaErrada2" placeholder="Resposta incorreta 2"></input> 
-            <input type="url" pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="texto2 url2" placeholder="URL da imagem 2"></input> 
-            <input type="text"  class="texto2 respostaErrada3" placeholder="Resposta correta 3"></input> 
-            <input type="url" pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="texto2 url3" placeholder="URL da imagem 3"></input> 
-        </form>
+        <div class="add"></div>
         <button onclick="botao2()" class="botao1">Prosseguir pra criar níveis</button>
+    </div>
+    <!--tela3-->
+    <div class="conteudo3 invisivel ">
+        <div class="texto">Agora, decida os níveis</div>
+        <div class="add2"></div>
+        <button onclick="botao3()" class="botao1">Finalizar Quizz</button>
     </div>
 
 
 
 
-
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./interacoes/funcoes.js"></script>
 </body>
