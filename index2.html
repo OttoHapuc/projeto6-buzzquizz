@@ -16,19 +16,18 @@
     <!--tela 1 -->
     <div class="conteudo1   ">
         <div class="texto">comece pelo começo</div>
-        <form class="inserir1 pergunta0" onsubmit="botao1()">
+        <form class="inserir1 pergunta0" onsubmit="botao1(event)">
             <input type="text" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required>
             <input type="url" pattern="https://.*"  class="texto2 urlQuizz"  placeholder="URL da imagem do seu quizz" required>
             <input type="number" min="3" name="quantidadePergunta" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required>
             <input type="number" min="2"  class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required>
+            <button type="submit" class="botao1">Prosseguir para criar perguntas</button>
         </form>
-        <button onclick="botao1()" class="botao1">Prosseguir para criar perguntas</button>
     </div>
     <!--tela2-->
     <div class="conteudo2 invisivel  ">
         <div class="texto">Crie suas perguntas</div>
-        <div class="add"></div>
-        <button onclick="botao2()" class="botao1">Prosseguir pra criar níveis</button>
+        <form class="add inserir2 pergunta1" onsubmit="botao2(event)" ></form>
     </div>
     <!--tela3-->
     <div class="conteudo3 invisivel ">
