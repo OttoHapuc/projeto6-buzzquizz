@@ -111,7 +111,7 @@ strong {
     position: absolute;
 }
 
-/* todos os quizzes */
+/* todos os uizzes */
 .corpoDeApresentacao{
     width: 100%;
 }
@@ -173,6 +173,7 @@ strong {
     object-fit: none;
 }
 .quizz_title{
+    padding: 0 3px;
     position: absolute;
     top: 50%;
     width: 100%;
@@ -182,10 +183,11 @@ strong {
     transform: translateY(-50%);
 }
 /*---------------------------------------------------------*/
+.quizz_questions_list{
+    width: 100%;
+}
 .quizz_question_container{
-    width: 90%;
-    margin-left: 50%;
-    transform:translateX(-50%);
+    width: 100%;
     max-width: 500px;
     margin-bottom: 69px;
 }
@@ -259,4 +261,11 @@ strong {
 
 .invisivel {
     display: none;
+}
+
+@media (max-width: 767px) {
+    .quizz {
+        width: 100%;
+        padding: 69px 18px 0 18px;
+    }
 }

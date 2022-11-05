@@ -55,8 +55,8 @@ function renderizarQuizz(obj){
         console.log(randomArray);
 
         quizzHTML+=`
-        <div class="quizz_questions_list">
-            <div class="quizz_question_container">
+        <div class="quizz_questions_list flex aling just-c">
+            <div class="quizz_question_container flex flex-column aling">
                 <div class="question_title" style="background-color: ${objElem.color};">
                     <div class="quizz_title">
                     ${objElem.title}
