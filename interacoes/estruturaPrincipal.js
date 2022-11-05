@@ -28,12 +28,10 @@ function exibeQuizzes() {
     for (let i = 0; i < lista.length; i++) {
 
         let divQuizzescolhido = `
-            <a href="./JOGAR/index.html">
-                <div onclick="quizzSelecionado()" class="quizzEscolhido">
-                    <img src="${lista[i].image}">
-                    <div class="gradienteTodosOsQuizz flex"><p>${lista[i].title}</p></div>
-                </div>
-            </a>
+            <div onclick="goToQuizz('${lista[i].id}')" class="quizzEscolhido">
+                <img src="${lista[i].image}">
+                <div class="gradienteTodosOsQuizz flex"><p>${lista[i].title}</p></div>
+            </div>
         `
 
         quizzEscolhido.innerHTML += divQuizzescolhido;
