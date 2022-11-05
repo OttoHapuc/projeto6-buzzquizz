@@ -1,11 +1,13 @@
 let criarTela1 = document.querySelector(".conteudo1")
 let criarTela2 = document.querySelector(".conteudo2")
 let criarTela3 = document.querySelector(".conteudo3")
-let criarTela4
+let criarTela4 = document.querySelector(".conteudo4")
 let alterarAba
 let numeroPergunta 
 let numeroNivel
 let cond2
+let title 
+let image
 
 
 function criarQizz() {
@@ -34,11 +36,14 @@ function botao1(event){
     event.preventDefault()
         criarTela1.classList.add("invisivel");
         criarTela2.classList.remove("invisivel");
-        console.log(numeroPergunta)
+        title = document.querySelector("input.tituloQuizz").value
+        image = document.querySelector("input.urlQuizz").value
+        console.log(title)
+        console.log(image)
         renderizar()
 }
 //pagina 2
-function renderizar(){  //arrumar validacao
+function renderizar(){  //perguntas
     let adicionarMsg = document.querySelector(".add")
     numeroPergunta = document.querySelector("input.quantidadePergunta").value
     for( i=0 ; i<numeroPergunta ; i++)
@@ -97,10 +102,14 @@ function switchAba(){
 }
 //pagina 4
 
- 
-
 function botao3(event){
     event.preventDefault()
+        criarTela3.classList.add("invisivel")
+        criarTela4.classList.remove("invisivel")
+        let adicionarFinal = document.querySelector(".imagem")
+        adicionarFinal.innerHTML += image
+        let adicionarTitulo = document.querySelector(".textoImagem")
+        adicionarTitulo.innerHTML += title
  
     
 }
