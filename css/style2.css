@@ -55,15 +55,23 @@ body{
     max-width: 600px;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 12px auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    padding: 21px 16px 6px 16px;
+    padding: 0px 16px 6px 16px;
+    position: relative;
+}
+.inserir2 ion-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.indicacao2 span{
+    margin-bottom: 10px;
 }
 
 .indicacao {
     display: flex;
+    flex-direction: column;
     margin-top: 20px;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -81,7 +89,7 @@ body{
 .texto2 {
     width: 564px;
     height: 46px;
-    margin-bottom: 15px;
+    margin-top: 15px;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
     display: flex;
