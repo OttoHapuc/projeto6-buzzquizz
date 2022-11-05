@@ -67,7 +67,12 @@ function botao2(event){
         criarTela3.classList.remove("invisivel");
         let adicionarNiveis = document.querySelector(".add3")
         numeroNivel = document.querySelector("input.quantidadeNivel").value
-        for (i=0; i<numeroNivel; i++)
+        adicionarNiveis.innerHTML += `<p class="indicacao indicacao2">Nível 1  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
+        <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
+        <input type="number" min="0" max="0" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input> 
+        <input type="url" pattern="https?://.+" class="texto2 reduzir urlNivel" placeholder="URL da imagem do nível"required></input> 
+        <input type="text" minlength="30"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input> `
+        for (i=1; i<numeroNivel; i++)
         adicionarNiveis.innerHTML +=`
         <p class="indicacao indicacao2">Nível ${i+1}  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
         <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
