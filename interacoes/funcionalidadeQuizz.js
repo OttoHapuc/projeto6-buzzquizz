@@ -66,7 +66,7 @@ function renderizarQuizz(obj){
 
         for(let j=0; j<questionsAmmount; j++){
             quizzHTML +=`
-            <div class="alternative ${objElem.answers[randomArray[j]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[j]].isCorrectAnswer}, this, ${i});">
+            <div class="alternative ${objElem.answers[randomArray[j]].isCorrectAnswer} questaoNumero${i}" onclick="escolherAlternativa(${objElem.answers[randomArray[j]].isCorrectAnswer}, this, ${i}, );">
                 <img src=${objElem.answers[randomArray[j]].image}>
                 <div class="alternative_text">${objElem.answers[randomArray[j]].text}</div>
             </div>`
@@ -90,20 +90,25 @@ function escolherAlternativa(indicador, clickedElem, questionNumber){
     if (indicador){
         pontuac++;
     }
-
+    const questao = document.querySelectorAll(".questaoNumero"+questionNumber);
+    const quantidadeAlternativas = questao.length;
+    console.log(quantidadeAlternativas);
     //efeitos visuais e scroll
 
-    for (let i=0; i<4; i++){
-        document.querySelectorAll(".alternative")[(questionNumber*4)+i].classList.add("red");
-        document.querySelectorAll(".alternative")[(questionNumber*4)+i].classList.add("low_opacity");
-        document.querySelectorAll(".alternative")[(questionNumber*4)+i].removeAttribute("onclick");        
-    }
-    for (let i=0; i<4; i++){
-        if (document.querySelectorAll(".alternative")[(questionNumber*4)+i].classList.contains("true")){
-            document.querySelectorAll(".alternative")[(questionNumber*4)+i].classList.remove("red");
-            document.querySelectorAll(".alternative")[(questionNumber*4)+i].classList.add("green");
+    //deixando todas as alternativas apagadas e vermelhas
+    for (let i=0; i<quantidadeAlternativas; i++){
+        questao[i].classList.add("red");
+        questao[i].classList.add("low_opacity");
+        questao[i].removeAttribute("onclick");
+
+        //deixando apenas a alternativa correta verde
+        if (questao[i].classList.contains("true")){
+            questao[i].classList.remove("red");
+            questao[i].classList.add("green");
         }
-    } 
+    }
+
+    //deixando especificamente a alternativa clicada com opacidade normal
     clickedElem.classList.remove("low_opacity");
 
     questionIndex++;
