@@ -36,15 +36,24 @@ function renderizarQuizz(obj){
     </div>
     `;
 
-    randomArray = [0,1,2,3];
-    function comparador() { 
-        return Math.random() - 0.5; 
-    }
-    randomArray.sort(comparador);
-
-
     for (let i=0; i<obj.questions.length; i++){
         let objElem = obj.questions[i];
+
+        let questionsAmmount = obj.questions[i].answers.length;
+
+        randomArray = [];
+
+        for (let i=0; i<questionsAmmount; i++){
+            randomArray.push(i);
+        }
+    
+        function comparador() { 
+            return Math.random() - 0.5; 
+        }
+        randomArray.sort(comparador);
+    
+        console.log(randomArray);
+
         quizzHTML+=`
         <div class="quizz_questions_list">
             <div class="quizz_question_container">
@@ -53,29 +62,22 @@ function renderizarQuizz(obj){
                     ${objElem.title}
                     </div>
                 </div>
-                <div class="question_alternatives">
-                    <div class="alternative ${objElem.answers[randomArray[0]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[0]].isCorrectAnswer}, this, ${i});">
-                        <img src=${objElem.answers[randomArray[0]].image}>
-                        <div class="alternative_text">${objElem.answers[randomArray[0]].text}</div>
-                    </div>
-                    <div class="alternative ${objElem.answers[randomArray[1]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[1]].isCorrectAnswer}, this, ${i});">
-                        <img src=${objElem.answers[randomArray[1]].image}>
-                        <div class="alternative_text">${objElem.answers[randomArray[1]].text}</div>
-                    </div>
-                </div>
-                <div class="question_alternatives">
-                    <div class="alternative ${objElem.answers[randomArray[2]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[2]].isCorrectAnswer}, this, ${i});">
-                        <img src=${objElem.answers[randomArray[2]].image}>
-                        <div class="alternative_text">${objElem.answers[randomArray[2]].text}</div>
-                    </div>
-                    <div class="alternative ${objElem.answers[randomArray[3]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[3]].isCorrectAnswer}, this, ${i});">
-                        <img src=${objElem.answers[randomArray[3]].image}>
-                        <div class="alternative_text">${objElem.answers[randomArray[3]].text}</div>
+                <div class="question_alternatives">`;
+
+        for(let j=0; j<questionsAmmount; j++){
+            quizzHTML +=`
+            <div class="alternative ${objElem.answers[randomArray[j]].isCorrectAnswer}" onclick="escolherAlternativa(${objElem.answers[randomArray[j]].isCorrectAnswer}, this, ${i});">
+                <img src=${objElem.answers[randomArray[j]].image}>
+                <div class="alternative_text">${objElem.answers[randomArray[j]].text}</div>
+            </div>`
+        }
+
+        quizzHTML +=`
                     </div>
                 </div>
             </div>
         </div>
-        `;
+        `
     }
 
     document.querySelector(".quizz").innerHTML = quizzHTML;
