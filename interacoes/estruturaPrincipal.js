@@ -28,7 +28,7 @@ function exibeQuizzes() {
     for (let i = 0; i < lista.length; i++) {
 
         let divQuizzescolhido = `
-            <div onclick="goToQuizz('${lista[i].id}')" class="quizzEscolhido">
+            <div onclick="goToQuizz('${lista[i].id}')" class="quizzEscolhido btn">
                 <img src="${lista[i].image}">
                 <div class="gradienteTodosOsQuizz flex"><p>${lista[i].title}</p></div>
             </div>

@@ -62,7 +62,7 @@ function renderizarQuizz(obj){
                     ${objElem.title}
                     </div>
                 </div>
-                <div class="question_alternatives">`;
+                <div class="question_alternatives flex flex-wrap">`;
 
         for(let j=0; j<questionsAmmount; j++){
             quizzHTML +=`
