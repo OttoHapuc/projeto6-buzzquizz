@@ -17,7 +17,7 @@
     <div class="conteudo1   ">
         <div class="texto">comece pelo começo</div>
         <form class="inserir1 pergunta0" onsubmit="botao1(event)">
-            <input type="text" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required>
+            <input type="text" minlength="16" maxlength="64" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required>
             <input type="url" pattern="https://.*"  class="texto2 urlQuizz"  placeholder="URL da imagem do seu quizz" required>
             <input type="number" min="3" name="quantidadePergunta" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required>
             <input type="number" min="2"  class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required>
@@ -32,10 +32,11 @@
     <!--tela3-->
     <div class="conteudo3 invisivel ">
         <div class="texto">Agora, decida os níveis</div>
-        <div class="add2"></div>
-        <button onclick="botao3()" class="botao1">Finalizar Quizz</button>
+        <form class=" inserir1 add3" onsubmit="botao3(event)"></form>
     </div>
 
+    <!--tela4-->
+    <div class="conteudo1 invisivel "></div>
 
 
 

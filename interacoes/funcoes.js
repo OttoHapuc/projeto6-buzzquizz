@@ -5,6 +5,7 @@ let criarTela4
 let alterarAba
 let numeroPergunta 
 let numeroNivel
+let cond2
 
 
 function criarQizz() {
@@ -31,19 +32,10 @@ function quizzSelecionado() {
 //pagina 1
 function botao1(event){
     event.preventDefault()
-    console.log("AAAAAHAHAHAHAHHAH")
-    console.log("teste")
-    const cond1 = document.querySelector("input.tituloQuizz").value
-    if (cond1.length>16 && cond1.length < 65)   {
-        console.log("deu")
         criarTela1.classList.add("invisivel");
         criarTela2.classList.remove("invisivel");
         console.log(numeroPergunta)
         renderizar()
-    }
-    else{
-        alert ("preenchar os dados novamente")
-    }
 }
 //pagina 2
 function renderizar(){  //arrumar validacao
@@ -51,8 +43,8 @@ function renderizar(){  //arrumar validacao
     numeroPergunta = document.querySelector("input.quantidadePergunta").value
     for( i=0 ; i<numeroPergunta ; i++)
     adicionarMsg.innerHTML +=`
-            <p class="indicacao indicacao2">Pergunta 1  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
-            <input type="text" class="texto2 reduzir tituloQuizz2" placeholder="Texto da pergunta" required></input> 
+            <p class="indicacao indicacao2">Pergunta ${i+1}  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
+            <input type="text" minlength="20" class="texto2 reduzir tituloQuizz2" placeholder="Texto da pergunta" required></input> 
             <input type="color" class="texto2 reduzir corQuizz" placeholder="Cor de fundo da pergunta" required></input> 
             <p class="indicacao reduzir ">Resposta correta</p>
             <input type="text"  class="texto2 reduzir respostaCerta" placeholder="Resposta correta"required></input> 
@@ -66,30 +58,25 @@ function renderizar(){  //arrumar validacao
             <input type="url" pattern="https?://.+" class="texto2 reduzir url3" placeholder="URL da imagem 3"></input> `
 
     adicionarMsg.innerHTML += `<button type="submit"  class="botao1">Prosseguir pra criar níveis</button>`
-        
-}
 
+}
+// TELA 3
 function botao2(event){
     event.preventDefault()
-    console.log ("alo")
-    let cond2 = document.querySelector("input.tituloQuizz2").value
-    if (cond2.length>20 ) {
         criarTela2.classList.add("invisivel");
         criarTela3.classList.remove("invisivel");
-        let adicionarNiveis = document.querySelector(".add2")
+        let adicionarNiveis = document.querySelector(".add3")
         numeroNivel = document.querySelector("input.quantidadeNivel").value
         for (i=0; i<numeroNivel; i++)
-        adicionarNiveis.innerHTML +=`<form class=" inserir1" onsubmit="botao3">
+        adicionarNiveis.innerHTML +=`
         <p class="indicacao indicacao2">Nível ${i+1}  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
-        <input type="text" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
-        <input type="number" min="3" max="100" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input> 
+        <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
+        <input type="number" min="0" max="100" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input> 
         <input type="url" pattern="https?://.+" class="texto2 reduzir urlNivel" placeholder="URL da imagem do nível"required></input> 
-        <input type="text"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input> </form>`
+        <input type="text" minlength="30"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input> `
 
-    }   
-    else{
-        alert ("preenchar os dados novamente")
-    }
+        adicionarNiveis.innerHTML +=`
+        <button type="submit" class="botao1">Finalizar Quizz</button>`
 }
 
 
@@ -103,11 +90,12 @@ function switchAba(){
     alterarAba.classList.toggle("invisivel")
 
 }
-//pagina 3
+//pagina 4
 
  
 
-function botao3(){
+function botao3(event){
+    event.preventDefault()
  
     
 }
