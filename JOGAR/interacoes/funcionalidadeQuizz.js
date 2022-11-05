@@ -140,14 +140,14 @@ function renderizarTelaFinal(index, scr){
         <div class="buttons">
             <button class="restart btn" onclick="restart()">Reiniciar Quizz</button>
             <br>
-            <button class="back btn" onclick="backHome()">Voltar para home</button>
+            <a href="../index.html"><button class="back btn" <!--onclick="backHome()"-->>Voltar para home</button></a>
         </div>
     </div>
     `;
     document.querySelector(".back").scrollIntoView({behavior: "smooth"});
 }
 
-function backHome(){
+/*function backHome(){
     pontuac = 0;
     maxPontuac = 0;
     questionIndex = 0;
@@ -155,7 +155,7 @@ function backHome(){
     document.querySelector(".quizz").innerHTML = ``;
     document.getElementsByTagName("main")[0].classList.remove("invisivel");
     document.querySelector(".quizz").classList.add("invisivel");
-}
+}*/
 
 function restart(ID){
     pontuac = 0;
