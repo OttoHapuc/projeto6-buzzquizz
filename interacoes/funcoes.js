@@ -33,7 +33,6 @@ function quizzSelecionado() {
 // leonardo 
 //pagina 1
 let tituloDoQuizz = {
-    id:"",
     title:"",
     image:"",
     questions: [],
@@ -189,7 +188,7 @@ function switchAba(essaDiv){
     let niveisDoJogo = {
         title:"",
         image:"",
-        texto:"",
+        text:"",
         minValue:""
     }
 
@@ -200,11 +199,10 @@ function switchAba(essaDiv){
 
     niveisDoJogo.title = tituloDoNivel;
     niveisDoJogo.image = urlNivel;
-    niveisDoJogo.texto = descricaoNivel;
+    niveisDoJogo.text = descricaoNivel;
     niveisDoJogo.minValue = porcentagemMinima;
 
     tituloDoQuizz.levels.push(niveisDoJogo)
-    console.log(tituloDoQuizz);
 
     essaDiv.parentNode.parentNode.innerHTML = `
     <div class="niveisDeJogo">
@@ -219,19 +217,25 @@ function switchAba(essaDiv){
 //pagina 4
 
 function botao3(event){
-    event.preventDefault()
-        criarTela3.classList.add("invisivel")
-        criarTela4.classList.remove("invisivel")
-        let adicionarFinal = document.querySelector(".imagemFinal")
+    event.preventDefault();
+        criarTela3.classList.add("invisivel");
+        criarTela4.classList.remove("invisivel");
+        let adicionarFinal = document.querySelector(".imagemFinal");
 
-        adicionarFinal.innerHTML += ` <img  src="${image}"  ></img>        `
-        let adicionarTitulo = document.querySelector(".imagemFinal")
-        adicionarTitulo.innerHTML += `<p class="textoImagem">${title}</p>`
- 
-    
+        adicionarFinal.innerHTML += ` <img  src="${image}"  ></img>        `;
+        let adicionarTitulo = document.querySelector(".imagemFinal");
+        adicionarTitulo.innerHTML += `<p class="textoImagem">${title}</p>`;
+
+    const enviarObjeto = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", tituloDoQuizz);
+
+    enviarObjeto.then(processaID);
+    enviarObjeto.catch(deuErroNoObjt);
+    //salvar id no local storage
 }
 
-let armazenamentoDeQuizz = [];
-
-
-
+function processaID(resposta) { 
+    console.log(resposta);
+}
+function deuErroNoObjt(erro){
+    console.log(erro)
+}
