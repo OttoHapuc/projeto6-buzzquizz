@@ -73,7 +73,7 @@ body{
 .indicacao {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 15px;
     align-items: flex-start;
     margin-bottom: 20px;
     font-family: 'Roboto';
@@ -85,11 +85,10 @@ body{
 .indicacao2{
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 .indicacao2 ion-icon {
     position: absolute;
-    top: 0px;
+    top: 20px;
     right: 20px;
 }
 .niveisDeJogo{
@@ -98,9 +97,10 @@ body{
     padding: 5px 15px 15px 15px;
     max-width: 600px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 .niveisDeJogo span {
-    margin-left: 33px
+    margin-left: 10px
 }
 .niveisDeJogo p {
     width: 300px;

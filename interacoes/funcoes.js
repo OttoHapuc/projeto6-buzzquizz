@@ -53,7 +53,6 @@ function botao1(event){
         tituloDoQuizz.title = title;
         tituloDoQuizz.image = image
 
-        console.log(tituloDoQuizz)
         renderizar()
 }
 //pagina 2
@@ -80,7 +79,7 @@ function renderizar(){  //perguntas
                 <input type="url" pattern="https?://.+" class="texto2 reduzir url3" placeholder="URL da imagem 3"></input>
             </div> `
     }
-    adicionarMsg.innerHTML += `<button type="submit"  onclick="salvarValoresDaPergunta()" class="botao1">Prosseguir pra criar níveis</button>`
+    adicionarMsg.innerHTML += `<button type="submit" class="botao1">Prosseguir pra criar níveis</button>`
 
 }
 let contaPergunta = 1
@@ -151,7 +150,6 @@ function salvarValoresDaPergunta(aDiv) {
         </p>
     `    
     contaPergunta ++;
-    console.log(tituloDoQuizz)
 }
 // TELA 3
 function botao2(event){
@@ -235,7 +233,6 @@ function botao3(event){
 
 function processaID(resposta) { 
 
-    console.log(resposta);
     const valorDeID = resposta.data.id;
     Storage.setItem(valorDeID);
 }
