@@ -193,10 +193,11 @@ function botao3(event){
     event.preventDefault()
         criarTela3.classList.add("invisivel")
         criarTela4.classList.remove("invisivel")
-        let adicionarFinal = document.querySelector(".imagem")
-        adicionarFinal.innerHTML += image
-        let adicionarTitulo = document.querySelector(".textoImagem")
-        adicionarTitulo.innerHTML += title
+        let adicionarFinal = document.querySelector(".imagemFinal")
+
+        adicionarFinal.innerHTML += ` <img  src="${image}"  ></img>        `
+        let adicionarTitulo = document.querySelector(".imagemFinal")
+        adicionarTitulo.innerHTML += `<p class="textoImagem">${title}</p>`
  
     
 }

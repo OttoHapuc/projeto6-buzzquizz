@@ -106,13 +106,15 @@ body{
     background: #EC362D;
     border: 1px solid #EC362D;
 }
-.imagem {
+.textoImagem{
+    position: absolute;
+    bottom: 320px;
+}
+.imagemFinal img {
     width: 500px;
     height: 266px;
     position: relative;
-}
-.textoImagem{
-    position: absolute;
+    margin: 0 auto;
 }
 
 @media (max-width: 600px) {
