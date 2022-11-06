@@ -29,7 +29,8 @@ body{
 .cabecalho2 p{
     color: white;
 }
-.conteudo2{
+.conteudo2,
+.conteudo3{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -84,6 +85,25 @@ body{
 .indicacao2{
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+.indicacao2 ion-icon {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+.niveisDeJogo{
+    margin-top: 12px;
+    background-color: #FFFFFF;
+    padding: 5px 15px 15px 15px;
+    max-width: 600px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+.niveisDeJogo span {
+    margin-left: 33px
+}
+.niveisDeJogo p {
+    width: 300px;
 }
 
 .texto2 {
@@ -126,4 +146,5 @@ body{
         transition: .5s;
         width: 324px;
     }
+    
 }

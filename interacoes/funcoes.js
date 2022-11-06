@@ -65,9 +65,9 @@ function renderizar(){  //perguntas
     adicionarMsg.innerHTML +=`
             <div class="pergunta${i+1} inserir2">
                 <p class="indicacao indicacao2"><span>Pergunta ${i+1}</span>  
-                <ion-icon onclick="salvarValoresDaPergunta(this)" name="create"></ion-icon>
-                <input type="text" minlength="20" class="texto2 reduzir tituloQuizz2" placeholder="Texto da pergunta" required></input>
-                <input type="color" class="texto2 reduzir corQuizz" placeholder="Cor de fundo da pergunta" required></input>
+                    <ion-icon onclick="salvarValoresDaPergunta(this)" name="create"></ion-icon>
+                    <input type="text" minlength="20" class="texto2 reduzir tituloQuizz2" placeholder="Texto da pergunta" required></input>
+                    <input type="color" class="texto2 reduzir corQuizz" placeholder="Cor de fundo da pergunta" required></input>
                 </p>
                 <p class="indicacao reduzir ">Resposta correta</p>
                 <input type="text"  class="texto2 reduzir respostaCerta" placeholder="Resposta correta"required></input>
@@ -84,73 +84,75 @@ function renderizar(){  //perguntas
     adicionarMsg.innerHTML += `<button type="submit"  onclick="salvarValoresDaPergunta()" class="botao1">Prosseguir pra criar níveis</button>`
 
 }
-
-let CorpoPerguntasDoQuizz_questions = {
-    title:"",
-    color:"",
-    answers:[]
-};
-let perguntasDoQuizz_answers = {
-    text: "",
-    image: "",
-    isCorrectAnswer: ""
-};
+let contaPergunta = 1
 function salvarValoresDaPergunta(aDiv) {
-
     
-    let perguntasDoQuizz_answers = {
-        text: "",
-        image: "",
-        isCorrectAnswer: ""
-    };
     //chamar os input da aba 2 de criação;
     //pergunta
     let textoDaPergunta = document.querySelector('input.tituloQuizz2').value;
     let corQuizz = document.querySelector('input.corQuizz').value;
-
-    CorpoPerguntasDoQuizz_questions.title = textoDaPergunta;
-    CorpoPerguntasDoQuizz_questions.color = corQuizz;
+    let CorpoPerguntasDoQuizz_questions = {
+        title:textoDaPergunta,
+        color:corQuizz,
+        answers:[]
+    };
 
     let inputRespostacerta = document.querySelector('input.respostaCerta').value;
     let url0 = document.querySelector('input.url0').value;
+    let perguntasDoQuizz_answers2 = {
+        text: inputRespostacerta,
+        image: url0,
+        isCorrectAnswer: true
+    };
+    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers2)
 
-    perguntasDoQuizz_answers.text = inputRespostacerta;
-    perguntasDoQuizz_answers.image = url0;
-    perguntasDoQuizz_answers.isCorrectAnswer = true;
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers)
 
+    
     let respostaErrada1 = document.querySelector('input.respostaErrada1').value;
     let url1 = document.querySelector('input.url1').value;
+    let perguntasDoQuizz_answers3 = {
+        text: respostaErrada1,
+        image: url1,
+        isCorrectAnswer: false
+    };
+    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers3)    
 
-    perguntasDoQuizz_answers.text = respostaErrada1;
-    perguntasDoQuizz_answers.image = url1;
-    perguntasDoQuizz_answers.isCorrectAnswer = false;
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers)    
 
+
+    
     let respostaErrada2 = document.querySelector('input.respostaErrada2').value;
     let url2 = document.querySelector('input.url2').value;
+    let perguntasDoQuizz_answers4 = {
+        text: respostaErrada2,
+        image: url2,
+        isCorrectAnswer: false
+    };
+    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers4) 
 
-    perguntasDoQuizz_answers.text = respostaErrada2;
-    perguntasDoQuizz_answers.image = url2;
-    perguntasDoQuizz_answers.isCorrectAnswer = false;
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers) 
 
+    
     let respostaErrada3 = document.querySelector('input.respostaErrada3').value;
     let url3 = document.querySelector('input.url3').value;
+    let perguntasDoQuizz_answers5 = {
+        text: respostaErrada3,
+        image: url3,
+        isCorrectAnswer: false
+    };
 
-    perguntasDoQuizz_answers.text = respostaErrada3;
-    perguntasDoQuizz_answers.image = url3;
-    perguntasDoQuizz_answers.isCorrectAnswer = false;
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers) 
+    
+    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers5) 
 
     tituloDoQuizz.questions.push(CorpoPerguntasDoQuizz_questions);
+    
 
-    const batata = aDiv.parentNode.parentNode;
+    let batata = aDiv.parentNode.parentNode;
     batata.innerHTML = `
-        <p class="indicacao indicacao2"><span>Pergunta ${i+1}</span>  
+        <p class="indicacao indicacao2"><span>Pergunta ${contaPergunta}</span>  
             <ion-icon style="color: green;" name="create"></ion-icon>
         </p>
-    `
+    `    
+    contaPergunta ++;
+    console.log(tituloDoQuizz)
 }
 // TELA 3
 function botao2(event){
@@ -159,19 +161,16 @@ function botao2(event){
         criarTela3.classList.remove("invisivel");
         let adicionarNiveis = document.querySelector(".add3")
         numeroNivel = document.querySelector("input.quantidadeNivel").value
-        adicionarNiveis.innerHTML += `<p class="indicacao indicacao2">Nível 1  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
-        <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
-        <input type="number" min="0" max="0" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input> 
-        <input type="url" pattern="https?://.+" class="texto2 reduzir urlNivel" placeholder="URL da imagem do nível"required></input> 
-        <input type="text" minlength="30"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input> `
-        for (i=1; i<numeroNivel; i++)
+        for (i=1; i<=numeroNivel; i++){
         adicionarNiveis.innerHTML +=`
-        <p class="indicacao indicacao2">Nível ${i+1}  <ion-icon onclick="switchAba(this)" name="albums-sharp"></ion-icon></p>
-        <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input> 
-        <input type="number" min="0" max="100" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input> 
-        <input type="url" pattern="https?://.+" class="texto2 reduzir urlNivel" placeholder="URL da imagem do nível"required></input> 
-        <input type="text" minlength="30"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input> `
-
+        <div class="niveisDeJogo">
+            <p class="indicacao indicacao2"><span>Nível ${i}</span>  <ion-icon onclick="switchAba(this)" name="create"></ion-icon></p>
+            <input type="text" minlength="10" class="texto2 reduzir tituloNivel" placeholder="Titulo do nível" required></input>
+            <input type="number" min="0" max="100" class="texto2 reduzir porcentagemMinima" placeholder="% de acerto mínima" required></input>
+            <input type="url" pattern="https?://.+" class="texto2 reduzir urlNivel" placeholder="URL da imagem do nível"required></input>
+            <input type="text" minlength="30"  class="texto2 reduzir descricaoNivel" placeholder="Descrição do nível"required></input>
+        </div>`
+        }
         adicionarNiveis.innerHTML +=`
         <button type="submit" class="botao1">Finalizar Quizz</button>`
 }
@@ -182,10 +181,40 @@ function botao2(event){
 // criar class para diminiir
 
 //fazer um map, por acabar
-function switchAba(){
-    let alterarAba = document.querySelectorAll(".reduzir")
-    alterarAba.classList.toggle("invisivel")
+let contadorDeNiveis = 1;
+function switchAba(essaDiv){
+    //let alterarAba = document.querySelectorAll(".reduzir");
+    //alterarAba.classList.toggle("invisivel");
 
+    let niveisDoJogo = {
+        title:"",
+        image:"",
+        texto:"",
+        minValue:""
+    }
+
+    let tituloDoNivel = document.querySelector('input.tituloNivel').value;
+    let porcentagemMinima = document.querySelector('input.porcentagemMinima').value;
+    let urlNivel = document.querySelector('input.urlNivel').value;
+    let descricaoNivel = document.querySelector('input.descricaoNivel').value;
+
+    niveisDoJogo.title = tituloDoNivel;
+    niveisDoJogo.image = urlNivel;
+    niveisDoJogo.texto = descricaoNivel;
+    niveisDoJogo.minValue = porcentagemMinima;
+
+    tituloDoQuizz.levels.push(niveisDoJogo)
+    console.log(tituloDoQuizz);
+
+    essaDiv.parentNode.parentNode.innerHTML = `
+    <div class="niveisDeJogo">
+        <p class="indicacao indicacao2">
+            <span>Nível ${contadorDeNiveis}</span>  
+            <ion-icon style="color: green;" name="create"></ion-icon>
+        </p>
+    </div>
+    `
+    contadorDeNiveis++;
 }
 //pagina 4
 
@@ -206,9 +235,3 @@ let armazenamentoDeQuizz = [];
 
 
 
-let niveisDoJogo = {
-    title:"",
-    image:"",
-    texto:"",
-    minValue:""
-}
