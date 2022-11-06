@@ -201,6 +201,7 @@ strong {
     color: white;
 }
 .question_alternatives{
+    width: 100%;
     margin-top: 13px;
     display: flex;
     justify-content: space-between;
@@ -238,6 +239,7 @@ strong {
     color: #484848;
     font-weight: 700;
     font-size: 17px;
+    overflow: hidden;
 }
 .buttons{
     text-align: center;

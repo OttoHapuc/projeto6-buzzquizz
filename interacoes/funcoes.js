@@ -9,17 +9,6 @@ let cond2
 let title 
 let image
 
-
-function criarQizz() {
-
-    const tela1 = document.querySelector('.AreaDeExibicaoInicial-Tela1')
-
-    tela1.classList.add('invisivel')
-
-    //leonardo    adicionar pagina criar quizz
-    criarTela1.classList.remove("invisivel");
-}
-
 function quizzSelecionado() {
 
     const tela1 = document.querySelector('.AreaDeExibicaoInicial-Tela1');
