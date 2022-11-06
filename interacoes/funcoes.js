@@ -221,9 +221,17 @@ function botao3(event){
 }
 
 function processaID(resposta) { 
-
     const valorDeID = resposta.data.id;
-    Storage.setItem(valorDeID);
+
+    let valoresDoStorage = localStorage
+    if (valoresDoStorage.length === 0) {
+        localStorage.setItem("id", valorDeID)
+    }
+    else{
+        let primeiroValor = valoresDoStorage.id;
+        primeiroValor+=","+valorDeID;
+        localStorage.setItem("id", primeiroValor);
+    }
 }
 function deuErroNoObjt(erro){
     alert("Preencha os campos corretamente, verifique se o link de imagem é válido e tente novamente.");
