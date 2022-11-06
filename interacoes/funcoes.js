@@ -222,7 +222,7 @@ function botao3(event){
         criarTela4.classList.remove("invisivel");
         let adicionarFinal = document.querySelector(".imagemFinal");
 
-        adicionarFinal.innerHTML += ` <img  src="${image}"  ></img>        `;
+        adicionarFinal.innerHTML += ` <img  src="${image}"  ></img> `;
         let adicionarTitulo = document.querySelector(".imagemFinal");
         adicionarTitulo.innerHTML += `<p class="textoImagem">${title}</p>`;
 
@@ -234,8 +234,11 @@ function botao3(event){
 }
 
 function processaID(resposta) { 
+
     console.log(resposta);
+    const valorDeID = resposta.data.id;
+    Storage.setItem(valorDeID);
 }
 function deuErroNoObjt(erro){
-    console.log(erro)
+    alert("Preencha os campos corretamente, verifique se o link de imagem é válido e tente novamente.");
 }
