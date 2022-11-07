@@ -119,22 +119,60 @@ body{
 }
 
 .botao1{
-    margin: 50px 0 50px 0;
+    margin: 50px auto;
     border-radius: 15px;
     width: 370px;
     height: 54px;
     background: #EC362D;
     border: 1px solid #EC362D;
+    margin-left: 50%;
+    transform: translatex(-50%);
 }
-.textoImagem{
-    position: absolute;
-    bottom: 320px;
+
+.imagemFinal p{
+    max-width: 470px;
+    overflow: hidden;
+    margin: 0 auto;
+    font-family: "Roboto";
 }
 .imagemFinal img {
     width: 500px;
     height: 266px;
     position: relative;
     margin: 0 auto;
+}
+.textoImagem{
+    position: absolute;
+    bottom: 250px;
+    color: #FFFFFF;
+    padding-left: 20px;
+}
+
+.conteudo4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 23px;
+    text-align: center;
+}
+.conteudo4 button{
+    width: 220px;
+    height: 44px;
+    font-size: 21px;
+    background-color: #EC362D;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+.conteudo4 a {
+    width: 220px;
+    height: 30px;
+    text-decoration: none;
+    color: #818181;
+}
+.imagemFinal img{
+    max-width: 500px;
+    margin: 45px 0 45px 0;
 }
 
 @media (max-width: 600px) {
