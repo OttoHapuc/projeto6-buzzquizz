@@ -68,12 +68,15 @@ function renderizar(){  //perguntas
                 <input type="url" pattern="https?://.+" class="texto2 reduzir url3" placeholder="URL da imagem 3"></input>
             </div> `
     }
-    adicionarMsg.innerHTML += `<button type="submit" class="botao1">Prosseguir pra criar níveis</button>`
+    adicionarMsg.innerHTML += `<button type="submit" class="botao1 botaoTela2 invisivel">Prosseguir pra criar níveis</button>`
 
 }
 let contaPergunta = 1
 function salvarValoresDaPergunta(aDiv) {
-    
+    if (contaPergunta === Number(qntPerguntas)){
+        let primeiroBotao = document.querySelector('.botaoTela2');
+        primeiroBotao.classList.remove('invisivel')
+    }
     //chamar os input da aba 2 de criação;
     //pergunta
     let textoDaPergunta = document.querySelector('input.tituloQuizz2').value;
@@ -143,7 +146,9 @@ function salvarValoresDaPergunta(aDiv) {
     contaPergunta ++;
 }
 // TELA 3
+let contaPergunta2 = 1
 function botao2(event){
+    
     event.preventDefault()
         criarTela2.classList.add("invisivel");
         criarTela3.classList.remove("invisivel");
@@ -160,7 +165,8 @@ function botao2(event){
         </div>`
         }
         adicionarNiveis.innerHTML +=`
-        <button type="submit" class="botao1">Finalizar Quizz</button>`
+        <button type="submit" class="botao1 botaoTela3 invisivel">Finalizar Quizz</button>`
+        
 }
 
 
@@ -174,6 +180,12 @@ function switchAba(essaDiv){
     //let alterarAba = document.querySelectorAll(".reduzir");
     //alterarAba.classList.toggle("invisivel");
 
+    console.log(contaPergunta2)
+    console.log(qntNiveis)
+    if (contaPergunta2 === Number(qntNiveis)){
+        let primeiroBotao = document.querySelector('.botaoTela3');
+        primeiroBotao.classList.remove('invisivel')
+    }
     let niveisDoJogo = {
         title:"",
         image:"",
@@ -202,6 +214,7 @@ function switchAba(essaDiv){
     </div>
     `
     contadorDeNiveis++;
+    contaPergunta2++;
 }
 //pagina 4
 
