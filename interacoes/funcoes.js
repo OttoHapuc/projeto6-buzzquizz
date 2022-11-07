@@ -96,39 +96,41 @@ function salvarValoresDaPergunta(aDiv) {
 
     
     let respostaErrada1 = document.querySelector('input.respostaErrada1').value;
-    let url1 = document.querySelector('input.url1').value;
-    let perguntasDoQuizz_answers3 = {
-        text: respostaErrada1,
-        image: url1,
-        isCorrectAnswer: false
-    };
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers3)    
-
+    if (respostaErrada1 !== ""){
+        let url1 = document.querySelector('input.url1').value;
+        let perguntasDoQuizz_answers3 = {
+            text: respostaErrada1,
+            image: url1,
+            isCorrectAnswer: false
+        };
+        CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers3)    
+    }
 
 
     
     let respostaErrada2 = document.querySelector('input.respostaErrada2').value;
-    let url2 = document.querySelector('input.url2').value;
-    let perguntasDoQuizz_answers4 = {
-        text: respostaErrada2,
-        image: url2,
-        isCorrectAnswer: false
-    };
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers4) 
-
+    if (respostaErrada2 !== ""){
+        let url2 = document.querySelector('input.url2').value;
+        let perguntasDoQuizz_answers4 = {
+            text: respostaErrada2,
+            image: url2,
+            isCorrectAnswer: false
+        };
+        CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers4) 
+    }
 
     
     let respostaErrada3 = document.querySelector('input.respostaErrada3').value;
-    let url3 = document.querySelector('input.url3').value;
-    let perguntasDoQuizz_answers5 = {
-        text: respostaErrada3,
-        image: url3,
-        isCorrectAnswer: false
-    };
-
+    if (respostaErrada3 !== ""){
+        let url3 = document.querySelector('input.url3').value;
+        let perguntasDoQuizz_answers5 = {
+            text: respostaErrada3,
+            image: url3,
+            isCorrectAnswer: false
+        };
+        CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers5) 
+    }
     
-    CorpoPerguntasDoQuizz_questions.answers.push(perguntasDoQuizz_answers5) 
-
     tituloDoQuizz.questions.push(CorpoPerguntasDoQuizz_questions);
     
 
