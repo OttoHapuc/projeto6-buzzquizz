@@ -172,6 +172,7 @@ strong {
     padding-top: 69px;
 }
 .quizz_header{
+    width: 100%;
     position: relative;
     margin-bottom: 42px;
 }
