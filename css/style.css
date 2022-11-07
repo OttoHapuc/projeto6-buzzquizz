@@ -92,6 +92,14 @@ strong {
     border-radius: 50px;
     margin: 15px;
 }
+.circle{
+    transition: .3s;
+}
+.circle:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: .2s;
+}
 
 /* ================ jogo ================*/
 

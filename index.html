@@ -7,6 +7,7 @@
     <title>Buzzquizz</title>
 
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style2.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -19,14 +20,12 @@
         <section class="AreaDeExibicaoInicial-Tela1 flex-column just-c">
             <div class="meusQuises flex just-b invisivel">
                 <h1 >Meus Quizzes</h1>
-                <a href="./index2.html">
-                    <ion-icon name="add-circle"></ion-icon>
-                </a>
+                <ion-icon class="circle" name="add-circle" onclick="criarQuizz()" style="cursor:pointer;"></ion-icon>
             </div>
             <div class="corpoDeApresentacaoUsuario flex flex-wrap"></div>
             <div class="botao flex flex-column aling just-c">
                 <p>Vocé não criou nenhum <br> quizz ainda :(</p>
-                <a href="./index2.html"><button style="cursor:pointer;">Criar Quizz</button></a>
+                <button style="cursor:pointer;" onclick="criarQuizz()">Criar Quizz</button>
             </div>
             <h1>Todos os Quizzes</h1>
             <div class="corpoDeApresentacao flex flex-wrap">
@@ -41,6 +40,40 @@
     </main>
 
     <div class="quizz flex flex-column aling invisivel">
+    </div>
+
+    <div class="criar invisivel">
+        <div class="cabecalho1"><p>BuzzQuizz</p></div>
+
+        <!--tela 1 -->
+        <div class="conteudo1   ">
+            <div class="texto">comece pelo começo</div>
+            <form class="inserir1 pergunta0" onsubmit="botao1(event)">
+                <input type="text" minlength="16" maxlength="64" class="texto2 tituloQuizz" placeholder="Título do seu quizz" required>
+                <input type="url" pattern="https://.*"  class="texto2 urlQuizz"  placeholder="URL da imagem do seu quizz" required>
+                <input type="number" min="3" name="quantidadePergunta" class="texto2 quantidadePergunta" placeholder="Quantidade de perguntas do quizz"required>
+                <input type="number" min="2"  class="texto2 quantidadeNivel" placeholder="Quantidade de níveis do quizz"required>
+                <button type="submit" class="botao1">Prosseguir para criar perguntas</button>
+            </form>
+        </div>
+        <!--tela2-->
+        <div class="conteudo2 invisivel">
+            <div class="texto">Crie suas perguntas</div>
+            <form class="add" onsubmit="botao2(event)" ></form>
+        </div>
+        <!--tela3-->
+        <div class="conteudo3 invisivel">
+            <div class="texto">Agora, decida os níveis</div>
+            <form class=" inserir1 add3" onsubmit="botao3(event)"></form>
+        </div>
+    
+        <!--tela4-->
+        <div class="conteudo4 invisivel">
+            <div class="texto">Seu Quizz esta pronto</div>
+            <div class="imagemFinal"></div>
+            <button class="acessarQuizz circle" onclick="acessarQuizz()">Acessar Quizz</button>
+            <p class="circle" onclick="criarQuizz()" >Voltar pra home</p>
+        </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 

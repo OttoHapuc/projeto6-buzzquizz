@@ -251,3 +251,15 @@ function processaID(resposta) {
 function deuErroNoObjt(erro){
     alert("Preencha os campos corretamente, verifique se o link de imagem é válido e tente novamente.");
 }
+
+function criarQuizz(){
+    document.getElementsByTagName("main")[0].classList.toggle("invisivel");
+    document.querySelector(".criar").classList.toggle("invisivel");
+}
+
+function acessarQuizz(){
+    criarQuizz();
+    listOfIDs = localStorage.id.split(",");
+    lastCreatedQuizz = listOfIDs[listOfIDs.length-1];
+    goToQuizz(lastCreatedQuizz);
+}
